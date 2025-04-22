@@ -1,66 +1,81 @@
-rm -r .config/
+rm -rf .ohmyposh.nu poshtheme.yaml configurations/ .config/
 cd ansible_quickstart/
 ansible-playbook -i inventory.yaml playbook.yaml --ask-become-pass
-cd ..
-ls -a
-ls -a .config/
-ls -a .config/nushell/
-rm -r configurations/
-cd ansible_quickstart/
-ansible-playbook -i inventory.yaml playbook.yaml --ask-become-pass
-cd ..
+clear
 ls
-ls -a .config/
-ls -a .config/nushell/
+rm poshtheme.yaml
+ls configurations/
+ls configurations/ -a
 cd configurations/
-git status
-git logs
-git log
-clear
-oh-my-posh get shell
-$env.env-path
-$env.PATH
-clear
-nvim .config/nushell/
-exit
-cd configurations/
-ls -a
-oh-my-posh init nu --print | save .ohmyposh.nu --force
-cd ..
-ls -a .local/
-ls -a .local/bin/
-oh-my-posh
-config nu
-nvim configurations/.config/nushell/config.nu
-exit
-oh-my-posh
-cd configurations/
-oh-my-posh init nu --print | save .ohmyposh.nu --force
-ls -a
 stow --adopt .
-cd 
-ls -a
-nvim configurations/.config/nushell/config.nu
-exit
-clear
+cd ..
 ls
+stow --help
+ls
+ls configurations/
+ls configurations/ -a
+cd configurations/
+mv .local-stow-ignore .stow-local-ignore
+ls
+cd ..
+pwd
+rm poshtheme.yaml
+cd configurations/
+stow --adopt .
+cd ..
+ls
+clear
 cd configurations/
 ls
-ls -a
 nvim poshtheme.yaml
 oh-my-posh print primary --config poshtheme.yaml --shell nu
-ls 
-oh-my-posh init nu --config /home/nvi0/configurations/poshtheme.yaml  --print | save .ohmyposh.nu --force
+nvim poshtheme.yaml
+nvim ../ansible_quickstart/
+sudo zypper in nodejs
+nvim ../ansible_quickstart/
+node --version
 exit
-cd ansible_quickstart/
+clear
+cd configurations/
+nvim poshtheme.yaml
+oh-my-posh print primary --config poshtheme.yaml --shell nu
+nvim poshtheme.yaml
+oh-my-posh print primary --config poshtheme.yaml --shell nu
+nvim poshtheme.yaml
+oh-my-posh print primary --config poshtheme.yaml --shell nu
+nvim poshtheme.yaml
+oh-my-posh print primary --config poshtheme.yaml --shell nu
+nvim poshtheme.yaml
+oh-my-posh print primary --config poshtheme.yaml --shell nu
+nvim poshtheme.yaml
+oh-my-posh print primary --config poshtheme.yaml --shell nu
+nvim poshtheme.yaml
+oh-my-posh print primary --config poshtheme.yaml --shell nu
+ec
+echo hi
+nvim poshtheme.yaml
+oh-my-posh print primary --config poshtheme.yaml --shell nu
+nvim poshtheme.yaml
+cd ..
+nvim configurations/poshtheme.yaml
+cd configurations/
+nvim configurations/poshtheme.yaml
+nvim poshtheme.yaml
+nvim configurations/poshtheme.yaml
+nvim poshtheme.yaml
+clear
+nvim poshtheme.yaml
+some
+other
+clear
+nvim poshtheme.yaml
+clear
+nvim poshtheme.yaml
+clear
+nvim poshtheme.yaml
+clear
+cd ..
 ls
-nvim playbook.yaml
-ls ~/configurations/
-ls ~/configurations/ -a
-nvim ../configurations/poshtheme.yaml
-ansible-playbook -i inventory.yaml playbook.yaml --ask-become-pass
-nvim playbook.yaml
-ansible-playbook -i inventory.yaml playbook.yaml --ask-become-pass
-cd ~/configurations/
-ls
+clear
+cd configurations/
 git status
