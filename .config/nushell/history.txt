@@ -1,0 +1,17 @@
+rm -r .config/nushell/
+cd configurations/
+stow --adopt .
+cd ..
+ls -a .config/
+ls -a .config/nushell/
+clear
+cd configurations/
+ls
+ls -la
+git init
+git branch -m main
+git status
+git add .
+git status
+nvim .gitignore
+git status
