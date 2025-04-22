@@ -16,7 +16,10 @@
 #
 # You can remove these comments if you want or leave
 # them for future reference.
-$env.config.buffer_editor = 'vim'
+
+$env.config.buffer_editor = 'nvim'
 $env.config.show_banner = false
 
 $env.path ++= ['/home/nvi0/.local/bin']
+
+source /home/nvi0/.ohmyposh.nu

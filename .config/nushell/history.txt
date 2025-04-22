@@ -1,17 +1,66 @@
-rm -r .config/nushell/
-cd configurations/
-stow --adopt .
+rm -r .config/
+cd ansible_quickstart/
+ansible-playbook -i inventory.yaml playbook.yaml --ask-become-pass
 cd ..
+ls -a
 ls -a .config/
 ls -a .config/nushell/
+rm -r configurations/
+cd ansible_quickstart/
+ansible-playbook -i inventory.yaml playbook.yaml --ask-become-pass
+cd ..
+ls
+ls -a .config/
+ls -a .config/nushell/
+cd configurations/
+git status
+git logs
+git log
 clear
+oh-my-posh get shell
+$env.env-path
+$env.PATH
+clear
+nvim .config/nushell/
+exit
+cd configurations/
+ls -a
+oh-my-posh init nu --print | save .ohmyposh.nu --force
+cd ..
+ls -a .local/
+ls -a .local/bin/
+oh-my-posh
+config nu
+nvim configurations/.config/nushell/config.nu
+exit
+oh-my-posh
+cd configurations/
+oh-my-posh init nu --print | save .ohmyposh.nu --force
+ls -a
+stow --adopt .
+cd 
+ls -a
+nvim configurations/.config/nushell/config.nu
+exit
+clear
+ls
 cd configurations/
 ls
-ls -la
-git init
-git branch -m main
-git status
-git add .
-git status
-nvim .gitignore
+ls -a
+nvim poshtheme.yaml
+oh-my-posh print primary --config poshtheme.yaml --shell nu
+ls 
+oh-my-posh init nu --config /home/nvi0/configurations/poshtheme.yaml  --print | save .ohmyposh.nu --force
+exit
+cd ansible_quickstart/
+ls
+nvim playbook.yaml
+ls ~/configurations/
+ls ~/configurations/ -a
+nvim ../configurations/poshtheme.yaml
+ansible-playbook -i inventory.yaml playbook.yaml --ask-become-pass
+nvim playbook.yaml
+ansible-playbook -i inventory.yaml playbook.yaml --ask-become-pass
+cd ~/configurations/
+ls
 git status
