@@ -1,0 +1,81 @@
+- name: Install required packages
+  hosts: my_machines
+  tasks:
+    - name: Install nushell
+      ansible.builtin.package:
+        name: nushell
+        state: present
+
+    - name: Install stow
+      ansible.builtin.package:
+        name: stow
+        state: present
+
+    - name: Install build prerequisites
+      ansible.builtin.package:
+        name:
+          - tar
+          - git
+          - gcc
+          - ninja 
+          - cmake 
+          - gcc-c++ 
+          - gettext-tools
+          - curl
+        state: present
+
+    - name: Install nodejs
+      ansible.builtin.package:
+        name: nodejs
+        state: present
+  become: true
+
+- name: Better unix tools
+  hosts: my_machines
+  tasks:
+    - name: XD
+      ansible.builtin.shell: echo Hi
+
+- name: Install neovim from source
+  hosts: my_machines
+  tasks:
+    - name: Clone neovim repository
+      ansible.builtin.git:
+        repo: https://github.com/neovim/neovim.git
+        dest: /home/nvi0/.sources/neovim
+        depth: 1
+    - name: Build neovim from source
+      ansible.builtin.shell: make CMAKE_BUILD_TYPE=RelWithDebInfo
+      args:
+        chdir: /home/nvi0/.sources/neovim
+    - name: Install neovim
+      ansible.builtin.shell: sudo make install
+      args:
+        chdir: /home/nvi0/.sources/neovim
+      become: true
+
+- name: Oh my posh
+  hosts: my_machines
+  tasks:
+    - name: Install
+      ansible.builtin.shell: curl -s https://ohmyposh.dev/install.sh | bash -s
+
+- name: Configure user profile
+  hosts: my_machines
+  tasks:
+    - name: Clone dotfiles repo
+      ansible.builtin.git:
+        repo: git@github.com:MuskoM/dotfiles.git
+        dest: /home/nvi0/configurations
+
+    - name: Clone neovim config
+      ansible.builtin.git:
+        repo: https://github.com/MuskoM/nvim-config.git
+        dest: /home/nvi0/configurations/.config/nvim
+
+    - name: Update stow
+      ansible.builtin.shell: stow --adopt .
+      args:
+        chdir: /home/nvi0/configurations
+
+
