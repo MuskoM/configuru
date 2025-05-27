@@ -1,0 +1,5 @@
+theme = catppuccin-frappe
+command = /opt/homebrew/bin/nu
+
+background-opacity = 0.9
+background-blur-radius = 20
