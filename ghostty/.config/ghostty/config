@@ -1,5 +1,26 @@
+# Theme
 theme = catppuccin-frappe
-command = /opt/homebrew/bin/nu
+background-opacity = 0.7
 
-background-opacity = 0.9
-background-blur-radius = 20
+# Keybinds
+## Manage tabs
+keybind = ctrl+g>c=new_tab
+keybind = ctrl+g>p=previous_tab
+keybind = ctrl+g>n=next_tab
+keybind = ctrl+g>1=goto_tab:1
+keybind = ctrl+g>2=goto_tab:2
+keybind = ctrl+g>3=goto_tab:3
+keybind = ctrl+g>4=goto_tab:4
+
+## Create splits
+keybind = ctrl+g>s=new_split:down
+keybind = ctrl+g>v=new_split:right
+
+## Move between splits
+keybind = ctrl+g>h=goto_split:left
+keybind = ctrl+g>j=goto_split:down
+keybind = ctrl+g>k=goto_split:up
+keybind = ctrl+g>l=goto_split:right
+
+## Close tabs, splits etc.
+keybind = ctrl+g>q=close_surface
