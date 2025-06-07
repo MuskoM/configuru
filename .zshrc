@@ -108,7 +108,20 @@ alias ...="z ../.."
 alias ....="z ../../.."
 alias .....="z ../../../.."
 alias d="zoxide query -ls"
+
+# Highlight --help using bat
+alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+alias -g -- --help='-h 2>&1 | bat --language=help --style=plain'
+
+# Additional aliases
 alias comfy="~/Devspace/ComfyUI/run_comfy.sh"
+alias cat="bat"
+
+alias ls="eza --icons=auto --hyperlink --group-directories-first"
+
+alias du="dust"
+
+alias df="duf"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
