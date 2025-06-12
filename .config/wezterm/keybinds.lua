@@ -2,8 +2,8 @@ local wz = require 'wezterm'
 
 local M = {}
 
-function M.set_keybinds(config)
-  config.leader = { key = 'g', mods = 'CMD', timeout_milliseconds = 1000 }
+function M.set_keybinds(config, leader)
+  config.leader = { key = 'g', mods = leader, timeout_milliseconds = 1000 }
   config.keys = {
     {
       key = "h",
