@@ -147,3 +147,10 @@ if [[ -d "/usr/local/texlive/" ]]; then
 export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
 export MANPATH="/usr/local/texlive/2025/texmf-dist/doc/man:$MANPATH"
 fi
+
+alias restart-plasma="systemctl restart --user plasma-plasmashell"
+
+export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+gpg-connect-agent updatestartuptty /bye > /dev/null

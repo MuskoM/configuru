@@ -1,0 +1,18 @@
+[window]
+opacity=0.80
+blur = true
+padding = { x = 8, y = 8}
+
+[font]
+normal = { family = "ZedMonoNerdFont", style = "Regular" } 
+bold = { family = "ZedMonoNerdFont" }
+italic = { family = "ZedMonoNerdFont" }
+bold_italic = { family = "ZedMonoNerdFont" }
+
+[cursor]
+style = { blinking = "On" }
+blink_interval = 1000
+blink_timeout = 10
+
+[mouse]
+hide_when_typing = true

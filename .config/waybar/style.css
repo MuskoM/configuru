@@ -1,0 +1,5 @@
+window#waybar {
+    background: rgba(200, 90, 10, .2);
+    border-bottom: 2px solid rgba(200, 90, 10, .7);
+    color: white;
+}
