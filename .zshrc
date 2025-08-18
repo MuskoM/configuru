@@ -141,6 +141,8 @@ if cmdExists jj; then
     source <(COMPLETE=zsh jj)
 fi
 
+export PATH="$HOME/Software/zig-0.15:$PATH"
+
 # LaTeX simple check if texlive directory exists then it's probable that
 # TexLive is installed, probably :)
 if [[ -d "/usr/local/texlive/" ]]; then
@@ -154,3 +156,5 @@ export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 gpg-connect-agent updatestartuptty /bye > /dev/null
+
+fastfetch
