@@ -1,0 +1,17 @@
+sort=-time
+layer=overlay
+font=ZedMonoNerdFont 10
+default-timeout=5000
+ignore-timeout=1
+max-icon-size=48
+icon-location=right
+
+anchor=bottom-right
+
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#fab387
+progress-color=over #313244
+
+[urgency=high]
+border-color=#fab387
