@@ -1,5 +1,47 @@
+@import "mocha.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-size: 13px;
+    min-height: 0;
+    color: @text;
+    background-color: transparent;
+}
+
 window#waybar {
-    background: rgba(200, 90, 10, .2);
-    border-bottom: 2px solid rgba(200, 90, 10, .7);
-    color: white;
+    background-color: transparent; 
+}
+
+.module {
+    background-color: shade(@base, 0.9); 
+    padding: 0px 12px;
+}
+
+.modules-left {
+    border-bottom: 4px solid @peach;
+    border-radius: 0% 0% 14% 0%;
+}
+
+.modules-center {
+    border-bottom: 4px solid @peach;
+    border-radius: 0% 0% 14% 14%;
+}
+
+.modules-right {
+    border-bottom: 4px solid @peach;
+    border-radius: 0% 0% 0% 14%;
+}
+
+
+#workspaces button * {
+    color: @overlay2
+}
+
+#workspaces button.active * {
+    color: @peach
+}
+
+#workspaces button.empty * {
+    color: @surface1
 }
