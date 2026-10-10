@@ -1,5 +1,5 @@
 # Theme
-theme = Catppuccin frappe
+theme = Catppuccin Frappe
 background-opacity = 0.97
 background-blur-radius = 20
 shell-integration-features = true

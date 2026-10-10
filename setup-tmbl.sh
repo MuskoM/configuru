@@ -27,7 +27,7 @@ fi
 ensure_sudo() {
     if [ "$EUID" -ne 0 ]; then
         if ! sudo -v; then
-          echo "ERROR:  access is required." >&2
+          echo "ERROR: sudo access is required." >&2
           exit 1
         fi
     fi
@@ -106,18 +106,6 @@ install_modern_unix_packages() {
     jq \
     cheat \
     xh
-}
-
-install_ohmyzsh() {
-  if [ -d "$HOME/.oh-my-zsh"]; then
-      echo "oh-my-zsh is already installed."
-  else
-    if [ -f "$HOME/.zshrc" ]; then
-      cp "$HOME/.zshrc" "$HOME/.zshrc.backup-$(date +%Y%m%d-%H%M%S)"
-    fi
-    cp .zshrc "$HOME/.zshrc"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
-  fi
 }
 
 install_ohmyzsh() {

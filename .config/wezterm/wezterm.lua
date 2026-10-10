@@ -4,13 +4,11 @@ local helpers = require 'helpers'
 
 local C = wz.config_builder()
 
-
-C.color_scheme = 'catppuccin-macchiato'
+C.color_scheme = 'Catppuccin Frappe'
+C.window_background_opacity = 0.97
 C.hide_tab_bar_if_only_one_tab = true
 C.use_fancy_tab_bar = false
 
-local leader = helpers.get_leader()
-
-keybinds.set_keybinds(C, leader)
+keybinds.set_keybinds(C, helpers.get_leader())
 
 return C

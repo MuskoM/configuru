@@ -5,7 +5,7 @@ Description=mako notifications tester
 
 [Service]
 Type=oneshot
-ExecStart=/home/nvi0/Configurations/configuru/mako/mako-reload.sh
+ExecStart=%h/Configurations/configuru/mako/mako-reload.sh
 
 [Install]
 WantedBy=graphical-session.target

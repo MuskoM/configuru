@@ -23,17 +23,7 @@ done
 shift $((OPTIND - 1))
 
 type=${type:='all'}
-jq_filter=''
-jq_selector=''
-tab=$(printf '\t')
 
-case "${type}" in
-    all)
-        jq_filter=""
-        ;;
-esac
-
-all_windows=$(niri msg -j windows | jq -r '.[] | select(.is_focused == false) | [.id, .title, .app_id] | @tsv' | awk -F '\t' '{print $1 "\t" $2 "\t" "\\0icon\\x1f"$3}')
 all_windows=$(niri msg -j windows | \
     jq -r '.[] | select(.is_focused == false) | [.id, .title, .app_id] | @tsv' | \
     awk 'BEGIN {
@@ -50,7 +40,6 @@ all_windows=$(niri msg -j windows | \
         }
         print $1, $2, "\\0icon\\x1f"$3
     }')
-echo -en "${all_windows}"
 selected=$(echo -en "${all_windows}" | fuzzel --dmenu --anchor=top-left --accept-nth=1 --with-nth=2)
 
 [ -z "${selected}" ] && exit 130
