@@ -2,8 +2,8 @@
 #!/bin/bash
 set -euo pipefail
 
-sudo zypper -n in {{ concat .packages.common .packages.linux.zypper | join " " }}
-    
+if [ "$EUID" -eq 0 ]; then SUDO=""; else SUDO="sudo"; fi
+$SUDO zypper -n in {{ concat .packages.common .packages.linux.zypper | join " " }}
 {{ end -}}
 
 {{- if eq .chezmoi.os "darwin" -}}
