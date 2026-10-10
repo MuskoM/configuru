@@ -45,17 +45,17 @@ list-executables-in-path=no
 # match-workers=<number of logical CPUs>
 
 [colors]
-background=303446dd
-text=c6d0f5ff
-prompt=b5bfe2ff
-placeholder=838ba7ff
-input=c6d0f5ff
-match=be8edcff
-selection=626880ff
-selection-text=c6d0f5ff
-selection-match=be8edcff
-counter=838ba7ff
-border=be8edcff
+background={{ trimPrefix "#" .ube.base }}dd
+text={{ trimPrefix "#" .ube.text }}ff
+prompt={{ trimPrefix "#" .ube.amber }}ff
+placeholder={{ trimPrefix "#" .ube.blue }}ff
+input={{ trimPrefix "#" .ube.amber }}ff
+match={{ trimPrefix "#" .ube.lime }}ff
+selection={{ trimPrefix "#" .ube.overlay1 }}ff
+selection-text={{ trimPrefix "#" .ube.accent }}ff
+selection-match={{ trimPrefix "#" .ube.lime }}ff
+counter={{ trimPrefix "#" .ube.blue }}ff
+border={{ trimPrefix "#" .ube.mantle }}ff
 
 [border]
 # width=1
