@@ -1,3 +1,9 @@
+[".config/nvim"]
+    type = "git-repo"
+    url = "https://github.com/MuskoM/nvim-config.git"
+    refreshPeriod = "168h"
+    pull.args = ["--ff-only"]
+
 {{ if eq .chezmoi.os "linux" -}}
 [".local/bin/oh-my-posh"]
 type = "file"
