@@ -1,0 +1,34 @@
+packages:
+  common:
+    - git
+    - zsh
+    - neovim
+    - ripgrep
+    - zoxide
+    - bat
+    - eza
+    - git-delta
+    - dust
+    - duf
+    - jq
+    - cheat
+    - zellij
+    - chezmoi
+  darwin:
+    taps: 
+      - jandedobbeleer/oh-my-posh
+    brews: 
+      - jandedobbeleer/oh-my-posh/oh-my-posh
+    casks:
+      - ghostty
+      - font-zed-mono-nerd-font
+      - font-victor-mono-nerd-font
+  linux:
+    zypper:
+      - niri
+      - waybar
+      - fuzzel
+      - mako
+      - swww
+      - xwayland-satellite
+      - ghostty
