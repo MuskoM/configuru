@@ -1,67 +1,68 @@
+# chezmoi:template:left-delimiter="[[" right-delimiter="]]"
 # yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
-final_space: true
+#
+# catppuccin-ube, quiet edition:
+#   - no backgrounds, plain segments on the terminal background
+#   - text stays neutral (text / subtext1); colour is only on icons
+#   - two accents: ube for icons, amber for "something needs attention"
+#     (dirty git tree, last command failed)
+#
+# chezmoi uses double square brackets here (directive above), so oh-my-posh's own
+# {{ }} templates pass through untouched -- no escaping needed.
+#
+#   feedgen   main •   1.27 ❯
+
 version: 3
+final_space: true
 blocks:
   - type: prompt
     alignment: left
     segments:
-      - type: os
-        style: diamond
-        trailing_diamond: ""
-        leading_diamond: ""
-        template: "{{ "{{.Icon}}" }}"
-        foreground: "{{ .ube.crust }}"
-        background: "{{ .ube.accent }}"
-
-      - type: git
-        style: diamond
-        trailing_diamond: ""
-        foreground: "{{ .ube.crust }}"
-        background: "{{ .ube.blue }}"
- 
-      - type: project
-        style: powerline
-        powerline_symbol: ""
-        foreground: "{{ .ube.crust }}"
-        background: "{{ .ube.amber }}"
-
-      # Languages
-      - type: lua
-        style: powerline
-        powerline_symbol: ""
-        foreground: "{{ .ube.crust }}"
-        background: "{{ .ube.blue }}"
-      - type: node
-        style: powerline
-        powerline_symbol: ""
-        foreground: "{{ .ube.crust }}"
-        background: "{{ .ube.amber }}"
-      - type: python
-        style: powerline
-        powerline_symbol: ""
-        foreground: "{{ .ube.crust }}"
-        background: "{{ .ube.lime }}"
-      - type: rust
-        style: powerline
-        powerline_symbol: ""
-        foreground: "{{ .ube.crust }}"
-        background: "{{ .ube.amber }}"
-      - type: go
-        style: powerline
-        powerline_symbol: ""
-        foreground: "{{ .ube.crust }}"
-        background: "{{ .ube.blue }}"
-
+      # Current folder only, e.g. "feedgen"
       - type: path
-        style: diamond
-        trailing_diamond: ""
-        foreground: "{{ .ube.crust }}"
-        background: "{{ .ube.pink }}"
+        style: plain
+        foreground: "[[ .ube.text ]]"
+        template: "{{ .Path }}"
         properties:
           style: folder
-          home_icon: 
-          folder_icon: 󰉋
-          mapped_locations_enabled: true
-          mapped_locations: 
-            ~/Configurations/configuru : 󰙵
-      ### 
+          home_icon: "~"
+
+      # Branch name; a single amber dot when anything is modified or staged.
+      - type: git
+        style: plain
+        foreground: "[[ .ube.subtext1 ]]"
+        template: "  <[[ .ube.accent ]]></> {{ .HEAD }}{{ if or .Working.Changed .Staging.Changed }}<[[ .ube.amber ]]> •</>{{ end }}"
+        properties:
+          branch_icon: ""
+          fetch_status: true
+
+      # Languages: only shown inside a project of that language.
+      # One icon, short version (major.minor).
+      - type: go
+        style: plain
+        foreground: "[[ .ube.subtext1 ]]"
+        template: "  <[[ .ube.accent ]]></> {{ .Major }}.{{ .Minor }}"
+      - type: node
+        style: plain
+        foreground: "[[ .ube.subtext1 ]]"
+        template: "  <[[ .ube.accent ]]></> {{ .Major }}.{{ .Minor }}"
+      - type: python
+        style: plain
+        foreground: "[[ .ube.subtext1 ]]"
+        template: "  <[[ .ube.accent ]]></> {{ .Major }}.{{ .Minor }}"
+      - type: rust
+        style: plain
+        foreground: "[[ .ube.subtext1 ]]"
+        template: "  <[[ .ube.accent ]]></> {{ .Major }}.{{ .Minor }}"
+      - type: lua
+        style: plain
+        foreground: "[[ .ube.subtext1 ]]"
+        template: "  <[[ .ube.accent ]]></> {{ .Major }}.{{ .Minor }}"
+
+      # Prompt character: ube normally, amber after a failed command.
+      - type: text
+        style: plain
+        foreground: "[[ .ube.accent ]]"
+        foreground_templates:
+          - "{{ if gt .Code 0 }}[[ .ube.amber ]]{{ end }}"
+        template: " ❯"
