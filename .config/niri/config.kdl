@@ -85,14 +85,14 @@ layout {
     // You can change how the focus ring looks.
     focus-ring {
         width 3
-        active-gradient from="#fab387" to="#89b4fa" angle=70 relative-to="workspace-view"
-        inactive-color "#181825"
+        active-gradient from="#be8edc" to="#8caaee" angle=70 relative-to="workspace-view"
+        inactive-color "#292c3c"
     }
 
     border {
         width 3
-        active-color "#313244"
-        inactive-color "#181825"
+        active-color "#414559"
+        inactive-color "#292c3c"
         urgent-color "#9b0000"
     }
 
@@ -114,7 +114,7 @@ layout {
 
 overview {
     zoom 0.7
-    backdrop-color "#11111b"
+    backdrop-color "#232634"
 }
 
 /// ---STARTUP--->
@@ -123,7 +123,7 @@ overview {
 
 spawn-at-startup "waybar"
 spawn-at-startup "xwayland-satellite" ":7"
-spawn-at-startup "swww" "img" "home/nvi0/.config/wallpapers/remember_me_mid_paris.png"
+spawn-at-startup "swww" "img" "/home/nvi0/.config/wallpapers/remember_me_mid_paris.png"
 
 spawn-at-startup "/home/nvi0/.config/niri/niri-setup.sh"
 
@@ -152,7 +152,7 @@ animations {
 window-rule {
     match is-window-cast-target=true
     focus-ring {
-        active-color "#f38ba8"
+        active-color "#e78284"
         inactive-color "#7d0d2d"
     }
     border {
@@ -162,7 +162,7 @@ window-rule {
         color "#7d0d2d70"
     }
     tab-indicator {
-        active-color "#f38ba8"
+        active-color "#e78284"
         inactive-color "#7d0d2d"
     }
 }
