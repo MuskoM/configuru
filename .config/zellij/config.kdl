@@ -5,8 +5,8 @@
 // straight to the pane, so <C-h/j/k/l> (window nav), <C-f> (Claude), <C-o>/<C-i>
 // (jumplist), <C-[> (Esc), <C-d>/<C-u> etc. all reach Neovim untouched.
 //
-//   Ctrl g        Locked -> normal. From any sub-mode, back to locked.
-//   Ctrl g Ctrl g Send a literal Ctrl-g to the pane -- same idea as tmux's
+//   Ctrl g        Toggle: locked <-> normal. From any sub-mode, back to locked.
+//   Ctrl g  a     Send a literal Ctrl-g to the pane -- same idea as tmux's
 //                 send-prefix. Ctrl g was picked because it is the least
 //                 valuable Ctrl key in Neovim (file info), so <C-a> increment
 //                 and shell beginning-of-line stay untouched.
@@ -15,8 +15,9 @@
 //                 kitty keyboard protocol (Ghostty has it) -- otherwise the
 //                 terminal sends plain Ctrl+h, which just goes to Neovim.
 //
-// NORMAL mode (after Ctrl g) is modelled on Neovim's <C-w>: one keypress does
-// one thing and drops you back to locked. Keys mean what they mean after <C-w>:
+// NORMAL mode (after Ctrl g) is modelled on Neovim's <C-w> and is STICKY: keys
+// act and you stay in normal, so Ctrl g j j l works; Ctrl g / Esc / Enter lock
+// again. Only keys that land you in a pane to type (s v n T e) lock by themselves. Keys mean what they mean after <C-w>:
 //
 //   h j k l       focus            H J K L   move pane
 //   w / W         next / prev pane s / v     split below / split right
@@ -47,56 +48,57 @@ keybinds clear-defaults=true {
     }
 
     normal {
-        // Prefix twice sends a literal Ctrl-g (0x07) through to the pane
-        bind "Ctrl g" { Write 7; SwitchToMode "locked"; }
+        // Ctrl g again toggles back to locked; a sends a literal Ctrl-g (0x07)
+        bind "Ctrl g" { SwitchToMode "locked"; }
+        bind "a" { Write 7; SwitchToMode "locked"; }
 
         // Focus (<C-w>h/j/k/l, <C-w>w/W)
-        bind "h" { MoveFocusOrTab "left"; SwitchToMode "locked"; }
-        bind "j" { MoveFocus "down"; SwitchToMode "locked"; }
-        bind "k" { MoveFocus "up"; SwitchToMode "locked"; }
-        bind "l" { MoveFocusOrTab "right"; SwitchToMode "locked"; }
-        bind "w" { FocusNextPane; SwitchToMode "locked"; }
-        bind "W" { FocusPreviousPane; SwitchToMode "locked"; }
+        bind "h" { MoveFocusOrTab "left"; }
+        bind "j" { MoveFocus "down"; }
+        bind "k" { MoveFocus "up"; }
+        bind "l" { MoveFocusOrTab "right"; }
+        bind "w" { FocusNextPane; }
+        bind "W" { FocusPreviousPane; }
 
         // Move pane (<C-w>H/J/K/L)
-        bind "H" { MovePane "left"; SwitchToMode "locked"; }
-        bind "J" { MovePane "down"; SwitchToMode "locked"; }
-        bind "K" { MovePane "up"; SwitchToMode "locked"; }
-        bind "L" { MovePane "right"; SwitchToMode "locked"; }
+        bind "H" { MovePane "left"; }
+        bind "J" { MovePane "down"; }
+        bind "K" { MovePane "up"; }
+        bind "L" { MovePane "right"; }
 
         // Create / close (<C-w>s, v, n, q, c, o, T)
         bind "s" { NewPane "down"; SwitchToMode "locked"; }
         bind "v" { NewPane "right"; SwitchToMode "locked"; }
         bind "n" { NewPane; SwitchToMode "locked"; }
-        bind "q" { CloseFocus; SwitchToMode "locked"; }
-        bind "c" { CloseFocus; SwitchToMode "locked"; }
-        bind "o" { ToggleFocusFullscreen; SwitchToMode "locked"; }
+        bind "q" { CloseFocus; }
+        bind "c" { CloseFocus; }
+        bind "o" { ToggleFocusFullscreen; }
         bind "T" { BreakPane; SwitchToMode "locked"; }
 
         // Floating panes
-        bind "f" { ToggleFloatingPanes; SwitchToMode "locked"; }
-        bind "F" { TogglePaneEmbedOrFloating; SwitchToMode "locked"; }
+        bind "f" { ToggleFloatingPanes; }
+        bind "F" { TogglePaneEmbedOrFloating; }
 
         // Tabs (gT / gt / g<Tab>)
-        bind "[" { GoToPreviousTab; SwitchToMode "locked"; }
-        bind "]" { GoToNextTab; SwitchToMode "locked"; }
-        bind "Tab" { ToggleTab; SwitchToMode "locked"; }
-        bind "1" { GoToTab 1; SwitchToMode "locked"; }
-        bind "2" { GoToTab 2; SwitchToMode "locked"; }
-        bind "3" { GoToTab 3; SwitchToMode "locked"; }
-        bind "4" { GoToTab 4; SwitchToMode "locked"; }
-        bind "5" { GoToTab 5; SwitchToMode "locked"; }
-        bind "6" { GoToTab 6; SwitchToMode "locked"; }
-        bind "7" { GoToTab 7; SwitchToMode "locked"; }
-        bind "8" { GoToTab 8; SwitchToMode "locked"; }
-        bind "9" { GoToTab 9; SwitchToMode "locked"; }
+        bind "[" { GoToPreviousTab; }
+        bind "]" { GoToNextTab; }
+        bind "Tab" { ToggleTab; }
+        bind "1" { GoToTab 1; }
+        bind "2" { GoToTab 2; }
+        bind "3" { GoToTab 3; }
+        bind "4" { GoToTab 4; }
+        bind "5" { GoToTab 5; }
+        bind "6" { GoToTab 6; }
+        bind "7" { GoToTab 7; }
+        bind "8" { GoToTab 8; }
+        bind "9" { GoToTab 9; }
 
         // Layouts
         bind "Space" { NextSwapLayout; }
 
         // Pane groups (select several panes, then act on all of them)
-        bind "g" { TogglePaneInGroup; SwitchToMode "locked"; }
-        bind "G" { ToggleGroupMarking; SwitchToMode "locked"; }
+        bind "g" { TogglePaneInGroup; }
+        bind "G" { ToggleGroupMarking; }
 
         // Scrollback
         bind "e" { EditScrollback; SwitchToMode "locked"; }
