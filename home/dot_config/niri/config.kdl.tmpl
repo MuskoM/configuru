@@ -85,15 +85,15 @@ layout {
     // You can change how the focus ring looks.
     focus-ring {
         width 3
-        active-gradient from="#be8edc" to="#8caaee" angle=70 relative-to="workspace-view"
-        inactive-color "#292c3c"
+        active-gradient from="{{ .ube.accent }}" to="{{ .ube.blue }}" angle=70 relative-to="workspace-view"
+        inactive-color "{{ .ube.mantle }}"
     }
 
     border {
         width 3
-        active-color "#414559"
-        inactive-color "#292c3c"
-        urgent-color "#9b0000"
+        active-color "{{ ube.surface0 }}"
+        inactive-color "{{ .ube.mantle }}"
+        urgent-color "{{ .ube.red }}"
     }
 
     shadow {
@@ -101,7 +101,7 @@ layout {
         softness 40
         spread 6
         offset x=0 y=5
-        color "#0007"
+        color "{{ .ube.crust }}"
     }
 
     struts {
@@ -114,7 +114,7 @@ layout {
 
 overview {
     zoom 0.7
-    backdrop-color "#232634"
+    backdrop-color "{{ .ube.crust }}"
 }
 
 /// ---STARTUP--->
@@ -152,18 +152,18 @@ animations {
 window-rule {
     match is-window-cast-target=true
     focus-ring {
-        active-color "#e78284"
-        inactive-color "#7d0d2d"
+        active-color "{{ .ube.red }}"
+        inactive-color "{{ .ube.mantle }}"
     }
     border {
-        inactive-color "#7d0d2d"
+        inactive-color "{{ .ube.mantle }}"
     }
     shadow {
-        color "#7d0d2d70"
+        color "{{ .ube.crust }}"
     }
     tab-indicator {
-        active-color "#e78284"
-        inactive-color "#7d0d2d"
+        active-color "{{ .ube.red }}"
+        inactive-color "{{ .ube.mantle }}"
     }
 }
 
