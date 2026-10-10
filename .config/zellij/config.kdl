@@ -344,7 +344,7 @@ web_client {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "catppuccin-frappe-mauve"
+theme "catppuccin-ube"
  
 // Theme to use when the host terminal reports a dark color palette.
 // Requires `theme_light` to also be set; otherwise `theme` is used.
@@ -615,12 +615,12 @@ scrollback_editor "nvim"
 // Note: This only applies to web clients at the moment.
 // client_async_worker_tasks 4
 
-// Catppuccin Frappe with mauve instead of green as the accent: focused-pane
+// catppuccin-ube: Catppuccin Frappe with mauve instead of green as the accent: focused-pane
 // frame, selected tab / mode ribbon and table titles. Copied from zellij's
 // built-in catppuccin-frappe; green stays where it means something
 // (exit_code_success, emphasis_2).
 themes {
-    catppuccin-frappe-mauve {
+    catppuccin-ube {
         text_unselected {
             base 198 208 245
             background 41 44 60

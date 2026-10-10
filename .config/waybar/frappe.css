@@ -25,5 +25,5 @@
 @define-color mantle #292c3c;
 @define-color crust #232634;
 
-/* catppuccin-frappe-mauve: the one accent colour */
+/* catppuccin-ube (Frappe + mauve accent): the one accent colour */
 @define-color accent @mauve;
