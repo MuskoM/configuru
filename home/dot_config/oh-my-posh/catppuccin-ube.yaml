@@ -44,26 +44,39 @@ blocks:
       - type: lua
         style: powerline
         powerline_symbol: ""
+        foreground: "#232634"
+        background: "#8caaee"
       - type: node
         style: powerline
         powerline_symbol: ""
+        foreground: "#232634"
+        background: "#c5e57b"
       - type: python
         style: powerline
         powerline_symbol: ""
+        foreground: "#232634"
+        background: "#f1b065"
       - type: rust
         style: powerline
         powerline_symbol: ""
+        foreground: "#232634"
+        background: "#e78284"
+      - type: go
+        style: powerline
+        powerline_symbol: ""
+        foreground: "#232634"
+        background: "#8caaee"
 
       - type: path
         style: diamond
         trailing_diamond: ""
         foreground: "#232634"
-        background: "#e199cc"
+        background: "#f4b8e4"
         properties:
           style: folder
           home_icon: 
           folder_icon: 󰉋
           mapped_locations_enabled: true
           mapped_locations: 
-            ~/configurations : 󰙵
+            ~/Configurations/configuru : 󰙵
       ### 

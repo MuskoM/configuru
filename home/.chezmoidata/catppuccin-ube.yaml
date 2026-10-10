@@ -1,0 +1,30 @@
+# catppuccin-ube -- Catppuccin Frappe greys with our own accents.
+# Single source of truth for every templated config; read as {{ .ube.<key> }}.
+# Hex only: every consumer takes "#rrggbb" (zellij included).
+# https://coolors.co/292c3c-303446-414559-c6d0f5-8caaee-f4b8e4-be8edc-e78284-f1b065-c5e57b
+ube:
+  name: catppuccin-ube
+  opacity: 0.97
+
+  # Accents
+  accent: "#be8edc"   # ube -- the main colour everywhere
+  pink: "#f4b8e4"     # Frappe pink, kept for its pastel tone
+  amber: "#f1b065"
+  lime: "#c5e57b"     # stands in for green: success, charging
+  blue: "#8caaee"
+  red: "#e78284"
+
+  # Stock Frappe, still used by zellij
+  peach: "#ef9f76"
+  sky: "#99d1db"
+  yellow: "#e5c890"
+
+  # Greys, light to dark
+  text: "#c6d0f5"
+  subtext1: "#b5bfe2"
+  overlay1: "#838ba7"
+  surface2: "#626880"
+  surface0: "#414559"
+  base: "#303446"
+  mantle: "#292c3c"
+  crust: "#232634"
