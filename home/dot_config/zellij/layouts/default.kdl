@@ -1,0 +1,13 @@
+// Zellij's built-in default layout, with the tab bar two rows tall: the plugin
+// only draws on the first row, so the second one stays empty as a gap above
+// the panes. default.swap.kdl next to this file carries the same change, so
+// cycling swap layouts (Ctrl g, Space) keeps the gap.
+layout {
+    pane size=2 borderless=true {
+        plugin location="tab-bar"
+    }
+    pane
+    pane size=1 borderless=true {
+        plugin location="status-bar"
+    }
+}
