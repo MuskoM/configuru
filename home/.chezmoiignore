@@ -1,0 +1,10 @@
+{{- if ne .chezmoi.os "linux" -}}
+.local/share/fonts
+.config/niri
+.config/systemd
+.config/waybar
+.config/fuzzel
+.config/mako
+{{ end -}}
+
+README.md
