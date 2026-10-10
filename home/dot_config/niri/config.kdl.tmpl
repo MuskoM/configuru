@@ -91,7 +91,7 @@ layout {
 
     border {
         width 3
-        active-color "{{ ube.surface0 }}"
+        active-color "{{ .ube.surface0 }}"
         inactive-color "{{ .ube.mantle }}"
         urgent-color "{{ .ube.red }}"
     }
@@ -101,7 +101,7 @@ layout {
         softness 40
         spread 6
         offset x=0 y=5
-        color "{{ .ube.crust }}"
+        color "{{ .ube.crust }}70"
     }
 
     struts {
@@ -153,17 +153,17 @@ window-rule {
     match is-window-cast-target=true
     focus-ring {
         active-color "{{ .ube.red }}"
-        inactive-color "{{ .ube.mantle }}"
+        inactive-color "{{ .ube.red }}"
     }
     border {
-        inactive-color "{{ .ube.mantle }}"
+        inactive-color "{{ .ube.red }}"
     }
     shadow {
-        color "{{ .ube.crust }}"
+        color "{{ .ube.red }}70"
     }
     tab-indicator {
         active-color "{{ .ube.red }}"
-        inactive-color "{{ .ube.mantle }}"
+        inactive-color "{{ .ube.red }}"
     }
 }
 
