@@ -169,3 +169,6 @@ fastfetch
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Include local configurations that chezmoi doesn't manage
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
