@@ -11,17 +11,17 @@ blocks:
         leading_diamond: ""
         template: "{{.Icon}}"
         foreground: "#232634"
-        background: "#ca9ee6"
+        background: "#be8edc"
 
       - type: battery
         style: diamond
         trailing_diamond: ""
         foreground: "#232634"
-        background: "#81c8be"
+        background: "#f1b065"
         background_templates:
-          - '{{if eq "Charging" .State.String}}#a6d189{{end}}'
+          - '{{if eq "Charging" .State.String}}#c5e57b{{end}}'
           - '{{if eq "Discharging" .State.String}}#e78284{{end}}'
-          - '{{if eq "Full" .State.String}}#81c8be{{end}}'
+          - '{{if eq "Full" .State.String}}#f1b065{{end}}'
         template: " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }} "
         properties:
           discharging_icon: " "
@@ -38,7 +38,7 @@ blocks:
         style: powerline
         powerline_symbol: ""
         foreground: "#232634"
-        background: "#81c8be"
+        background: "#f1b065"
 
       # Languages
       - type: lua
@@ -58,7 +58,7 @@ blocks:
         style: diamond
         trailing_diamond: ""
         foreground: "#232634"
-        background: "#babbf1"
+        background: "#e199cc"
         properties:
           style: folder
           home_icon: 

@@ -615,10 +615,10 @@ scrollback_editor "nvim"
 // Note: This only applies to web clients at the moment.
 // client_async_worker_tasks 4
 
-// catppuccin-ube: Catppuccin Frappe with mauve instead of green as the accent: focused-pane
+// catppuccin-ube: Catppuccin Frappe greys with own accents -- ube #be8edc instead of green as the accent: focused-pane
 // frame, selected tab / mode ribbon and table titles. Copied from zellij's
 // built-in catppuccin-frappe; green stays where it means something
-// (exit_code_success, emphasis_2).
+// (exit_code_success, emphasis_2), as lime #c5e57b.
 themes {
     catppuccin-ube {
         text_unselected {
@@ -626,7 +626,7 @@ themes {
             background 41 44 60
             emphasis_0 239 159 118
             emphasis_1 153 209 219
-            emphasis_2 166 209 137
+            emphasis_2 197 229 123
             emphasis_3 244 184 228
         }
         text_selected {
@@ -634,12 +634,12 @@ themes {
             background 98 104 128
             emphasis_0 239 159 118
             emphasis_1 153 209 219
-            emphasis_2 166 209 137
+            emphasis_2 197 229 123
             emphasis_3 244 184 228
         }
         ribbon_selected {
             base 41 44 60
-            background 202 158 230
+            background 190 142 220
             emphasis_0 231 130 132
             emphasis_1 239 159 118
             emphasis_2 244 184 228
@@ -654,11 +654,11 @@ themes {
             emphasis_3 244 184 228
         }
         table_title {
-            base 202 158 230
+            base 190 142 220
             background 0
             emphasis_0 239 159 118
             emphasis_1 153 209 219
-            emphasis_2 166 209 137
+            emphasis_2 197 229 123
             emphasis_3 244 184 228
         }
         table_cell_selected {
@@ -666,7 +666,7 @@ themes {
             background 98 104 128
             emphasis_0 239 159 118
             emphasis_1 153 209 219
-            emphasis_2 166 209 137
+            emphasis_2 197 229 123
             emphasis_3 244 184 228
         }
         table_cell_unselected {
@@ -674,7 +674,7 @@ themes {
             background 41 44 60
             emphasis_0 239 159 118
             emphasis_1 153 209 219
-            emphasis_2 166 209 137
+            emphasis_2 197 229 123
             emphasis_3 244 184 228
         }
         list_selected {
@@ -682,7 +682,7 @@ themes {
             background 98 104 128
             emphasis_0 239 159 118
             emphasis_1 153 209 219
-            emphasis_2 166 209 137
+            emphasis_2 197 229 123
             emphasis_3 244 184 228
         }
         list_unselected {
@@ -690,11 +690,11 @@ themes {
             background 41 44 60
             emphasis_0 239 159 118
             emphasis_1 153 209 219
-            emphasis_2 166 209 137
+            emphasis_2 197 229 123
             emphasis_3 244 184 228
         }
         frame_selected {
-            base 202 158 230
+            base 190 142 220
             background 0
             emphasis_0 239 159 118
             emphasis_1 153 209 219
@@ -710,7 +710,7 @@ themes {
             emphasis_3 239 159 118
         }
         exit_code_success {
-            base 166 209 137
+            base 197 229 123
             background 0
             emphasis_0 153 209 219
             emphasis_1 41 44 60
