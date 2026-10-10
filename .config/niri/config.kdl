@@ -85,7 +85,7 @@ layout {
     // You can change how the focus ring looks.
     focus-ring {
         width 3
-        active-gradient from="#ef9f76" to="#8caaee" angle=70 relative-to="workspace-view"
+        active-gradient from="#ca9ee6" to="#8caaee" angle=70 relative-to="workspace-view"
         inactive-color "#292c3c"
     }
 

@@ -12,6 +12,7 @@
     navigate = true
     dark = true
     side-by-side = true
+    syntax-theme = Catppuccin Frappe
 
 [merge]
     conflictstyle = zdiff3
