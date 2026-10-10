@@ -1,3 +1,11 @@
+{{- if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+set -euo pipefail
+
+sudo zypper -n in {{ concat .packages.common .packages.linux.zypper | join " " }}
+    
+{{ end -}}
+
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 set -euo pipefail

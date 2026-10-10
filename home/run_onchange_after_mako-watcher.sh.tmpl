@@ -1,0 +1,10 @@
+{{- if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+# path: {{ include "dot_config/systemd/user/mako-watcher.path" | sha256sum }}
+# service: {{ include "dot_config/systemd/user/mako-watcher.service" | sha256sum }}
+
+
+systemctl --user daemon-reload
+systemctl --user enable --now mako-watcher.path
+
+{{ end }}

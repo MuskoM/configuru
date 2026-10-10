@@ -1,0 +1,7 @@
+{{ if eq .chezmoi.os "linux" -}}
+[".local/bin/oh-my-posh"]
+type = "file"
+url = "https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-{{ .chezmoi.arch }}"
+executable = true
+refreshPeriod = "168h"
+{{ end -}}
