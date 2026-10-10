@@ -1,0 +1,124 @@
+// catppuccin-ube: Catppuccin Frappe greys with own accents -- ube #be8edc instead of green as the accent: focused-pane
+// frame, selected tab / mode ribbon and table titles. Copied from zellij's
+// built-in catppuccin-frappe; green stays where it means something
+// (exit_code_success, emphasis_2), as lime #c5e57b.
+themes {
+    catppuccin-ube {
+        text_unselected {
+            base {{ .ube.text }}
+            background {{ .ube.mantle }}
+            emphasis_0 {{ .ube.peach }}
+            emphasis_1 {{ .ube.sky }}
+            emphasis_2 {{ .ube.lime }}
+            emphasis_3 {{ .ube.pink }}
+        }
+        text_selected {
+            base {{ .ube.text }}
+            background {{ .ube.surface2 }}
+            emphasis_0 {{ .ube.peach }}
+            emphasis_1 {{ .ube.sky }}
+            emphasis_2 {{ .ube.lime }}
+            emphasis_3 {{ .ube.pink }}
+        }
+        ribbon_selected {
+            base {{ .ube.mantle }}
+            background {{ .ube.accent }}
+            emphasis_0 {{ .ube.red }}
+            emphasis_1 {{ .ube.peach }}
+            emphasis_2 {{ .ube.pink }}
+            emphasis_3 {{ .ube.blue }}
+        }
+        ribbon_unselected {
+            base {{ .ube.mantle }}
+            background {{ .ube.text }}
+            emphasis_0 {{ .ube.red }}
+            emphasis_1 {{ .ube.text }}
+            emphasis_2 {{ .ube.blue }}
+            emphasis_3 {{ .ube.pink }}
+        }
+        table_title {
+            base {{ .ube.accent }}
+            background 0
+            emphasis_0 {{ .ube.peach }}
+            emphasis_1 {{ .ube.sky }}
+            emphasis_2 {{ .ube.lime }}
+            emphasis_3 {{ .ube.pink }}
+        }
+        table_cell_selected {
+            base {{ .ube.text }}
+            background {{ .ube.surface2 }}
+            emphasis_0 {{ .ube.peach }}
+            emphasis_1 {{ .ube.sky }}
+            emphasis_2 {{ .ube.lime }}
+            emphasis_3 {{ .ube.pink }}
+        }
+        table_cell_unselected {
+            base {{ .ube.text }}
+            background {{ .ube.mantle }}
+            emphasis_0 {{ .ube.peach }}
+            emphasis_1 {{ .ube.sky }}
+            emphasis_2 {{ .ube.lime }}
+            emphasis_3 {{ .ube.pink }}
+        }
+        list_selected {
+            base {{ .ube.text }}
+            background {{ .ube.surface2 }}
+            emphasis_0 {{ .ube.peach }}
+            emphasis_1 {{ .ube.sky }}
+            emphasis_2 {{ .ube.lime }}
+            emphasis_3 {{ .ube.pink }}
+        }
+        list_unselected {
+            base {{ .ube.text }}
+            background {{ .ube.mantle }}
+            emphasis_0 {{ .ube.peach }}
+            emphasis_1 {{ .ube.sky }}
+            emphasis_2 {{ .ube.lime }}
+            emphasis_3 {{ .ube.pink }}
+        }
+        frame_selected {
+            base {{ .ube.accent }}
+            background 0
+            emphasis_0 {{ .ube.peach }}
+            emphasis_1 {{ .ube.sky }}
+            emphasis_2 {{ .ube.pink }}
+            emphasis_3 0
+        }
+        frame_highlight {
+            base {{ .ube.peach }}
+            background 0
+            emphasis_0 {{ .ube.pink }}
+            emphasis_1 {{ .ube.peach }}
+            emphasis_2 {{ .ube.peach }}
+            emphasis_3 {{ .ube.peach }}
+        }
+        exit_code_success {
+            base {{ .ube.lime }}
+            background 0
+            emphasis_0 {{ .ube.sky }}
+            emphasis_1 {{ .ube.mantle }}
+            emphasis_2 {{ .ube.pink }}
+            emphasis_3 {{ .ube.blue }}
+        }
+        exit_code_error {
+            base {{ .ube.red }}
+            background 0
+            emphasis_0 {{ .ube.yellow }}
+            emphasis_1 0
+            emphasis_2 0
+            emphasis_3 0
+        }
+        multiplayer_user_colors {
+            player_1 {{ .ube.pink }}
+            player_2 {{ .ube.blue }}
+            player_3 0
+            player_4 {{ .ube.yellow }}
+            player_5 {{ .ube.sky }}
+            player_6 0
+            player_7 {{ .ube.red }}
+            player_8 0
+            player_9 0
+            player_10 0
+        }
+    }
+}
