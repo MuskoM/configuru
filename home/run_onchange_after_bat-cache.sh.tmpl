@@ -1,0 +1,7 @@
+#!/bin/bash
+set -euo pipefail
+# theme: {{ include "dot_config/bat/themes/Catppuccin Frappe.tmTheme" | sha256sum }}
+
+if command -v bat >/dev/null; then
+    bat cache --build
+fi
