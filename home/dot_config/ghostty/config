@@ -4,3 +4,6 @@ background-opacity = 0.97
 background-blur-radius = 20
 shell-integration-features = true
 
+
+palette = 5=#be8edc
+palette = 13=#be8edc
